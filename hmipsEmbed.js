@@ -32,4 +32,4 @@ if (typeof(height) == 'undefined') height = 133;
 if (width < 150) width = 50;
 if (height < 133) height = 33;
 if (width < height) height = width;
-document.write('<iframe width='+width+' height='+height+' scrolling=no frameborder=0 scrolling=no allowfullscreen=true allowtransparency=true marginwidth="0" marginheight="0" src=http://www.mipsplayer.com/'+embedded+'/'+channel+'/'+e+'/'+width+'/'+height+' allowfullscreen ></iframe>')
+document.write('<iframe width='+width+' height='+height+' scrolling=no frameborder=0 scrolling=no allowfullscreen=true allowtransparency=true marginwidth="0" marginheight="0" src=http://www.mipsplayer.net/'+embedded+'/'+channel+'/'+e+'/'+width+'/'+height+' allowfullscreen ></iframe>')
