@@ -1,4 +1,3 @@
-// JavaScript Document
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -12,24 +11,39 @@ var isMobile = {
     Opera: function() {
         return navigator.userAgent.match(/Opera Mini/i);
     },
+    Mozilla: function() {
+       return navigator.userAgent.match(/Mozilla/i);
+    },
     Windows: function() {
         return navigator.userAgent.match(/IEMobile/i);
     },
     MacOSX: function() {
         return navigator.userAgent.match(/Macintosh/i);
+    },
+	Vivo: function() {
+		return navigator.userAgent.match(/Vivo/i);
+    },
+	Chrome: function() {
+		return navigator.userAgent.match(/Chrome/i);
     },	
     any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
     }
 };
-var embedded = "membedplayer";
-//var embedded = "embedplayer";
-if (!isMobile.any()){
-        embedded = "hembedplayer";
+
+
+var embedded = "hembedplayer";
+if (isMobile.any()){
+    embedded = "membedplayer";
 }
-if (typeof(width) == 'undefined') width = 150;
-if (typeof(height) == 'undefined') height = 133;
-if (width < 150) width = 50;
-if (height < 133) height = 33;
-if (width < height) height = width;
-document.write('<iframe width='+width+' height='+height+' scrolling=no frameborder=0 scrolling=no allowfullscreen=true allowtransparency=true marginwidth="0" marginheight="0" src=https://www.mipsplayer.net/'+embedded+'/'+channel+'/'+e+'/'+width+'/'+height+' allowfullscreen ></iframe>')
+if 	(isMobile.iOS() || isMobile.Vivo()){
+    embedded = "iembedplayer";
+}
+
+if (isMobile.Chrome()) {
+	e = "" + e + "1";
+}
+
+if (typeof(width) == 'undefined') width = 220;
+if (typeof(height) == 'undefined') height = 250;
+document.write('<iframe width='+width+' height='+height+' scrolling=no frameborder=0 scrolling=no allowtransparency=true marginwidth="0" marginheight="0" allowfullscreen src=https://www.mipsplayer.net/'+embedded+'/'+channel+'/'+e+'/'+width+'/'+height+' ></iframe>')
